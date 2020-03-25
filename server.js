@@ -3,7 +3,7 @@ const app = express();
 const todos = require("./routes/todoRoutes");
 
 const mongoose = require("mongoose");
-const mongoURL = "mongodb://localhost:27017/todoapi";
+const mongoURL = process.env.MONGODB_URI || "mongodb://localhost:27017/todoapi";
 
 mongoose.connect(mongoURL);
 mongoose.Promise = global.Promise;
